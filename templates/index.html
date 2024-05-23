@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Sepera Assignment</title>
+  </head>
+  <body>
+    <div class="top-section">
+      <div class="search-div">
+        <h3>Search by title</h3>
+        <form id="search-form">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search.."
+            name="search"
+          />
+          <button type="submit">Submit</button>
+          <button id="search-clear">Clear</button>
+        </form>
+      </div>
+      <div class="pagination">
+        <button id="prev-page" onclick="changePage(-1)">Previous</button>
+        <span id="page-number">Page 1</span>
+        <button id="next-page" onclick="changePage(1)">Next</button>
+        <div id="loader"></div>
+      </div>
+    </div>
+    <div id="message-div"></div>
+    <table id="table-root" class="styled-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Stock</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Thumbnail</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+    <div id="image-modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-image" />
+      <div id="caption"></div>
+    </div>
+  </body>
+  <script src="/static/functions.js"></script>
+</html>
