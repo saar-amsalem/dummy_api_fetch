@@ -9,8 +9,8 @@
 ### Step-by-Step Installation
 
 1. **Clone the repository**:
-   git clone <[repository_url](https://github.com/saar-amsalem/dummy_api_fetch.git)>
-   cd dummy_api_fetch
+   git clone https://github.com/saar-amsalem/dummy_api_fetch.git
+   and cd dummy_api_fetch
 
 2. **Install dependencies**
    pip install -r requirements.txt
