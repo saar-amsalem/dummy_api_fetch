@@ -16,9 +16,9 @@ def get_products():
     per_page = 5
     skip = (page - 1) * per_page
     if query is not None and len(query) > 0:
-        params = f'/search?q={query}&limit={per_page}&skip={skip}'
+        params = f"/search?q={query}&limit={per_page}&skip={skip}"
     else:
-        params = f'?limit={per_page}&skip={skip}'
+        params = f"?limit={per_page}&skip={skip}"
     products = fetch_products(params)
     return jsonify(products)
 
