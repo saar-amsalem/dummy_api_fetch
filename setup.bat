@@ -3,13 +3,11 @@ setlocal
 
 echo Cloning the repository...
 git clone https://github.com/saar-amsalem/dummy_api_fetch.git
+echo clone done !
+
 cd dummy_api_fetch
 
-for /f "tokens=*" %%i in ('where python3.12 2^>nul') do set PYTHON_PATH=%%i
-if "%PYTHON_PATH%"=="" (
-    echo Python 3.12 is not installed. Please install it and run this script again.
-    exit /b 1
-)
+echo in dummy_api_fetch
 
 echo Creating virtual environment...
 %PYTHON_PATH% -m venv venv
