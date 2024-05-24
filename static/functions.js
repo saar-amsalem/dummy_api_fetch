@@ -1,5 +1,6 @@
 let currentPage = 1;
 let currentSearchQuery = "";
+const productsPerPage = 5
 
 async function renderProducts() {
   toggleLoader(true);
@@ -8,6 +9,13 @@ async function renderProducts() {
   const productsToRender = await fetchProducts(currentPage, currentSearchQuery);
   if (productsToRender.length < 1) {
     renderMessageInsteadOfTable("No Products To Show !");
+    return
+  }
+  if (productsToRender.length < productsPerPage) {
+    toggleNextButtonVisibility()
+  }
+  else {
+    toggleNextButtonVisibility(true)
   }
   productsToRender.forEach((product) => {
     const productToAppend = document.createElement("tr");
@@ -60,6 +68,15 @@ async function fetchProducts(page, query = "") {
   const response = await fetch(`/products?page=${page}&q=${query}`);
   const data = await response.json();
   return data;
+}
+
+function toggleNextButtonVisibility(show) {
+  if (show) {
+    document.getElementById("next-page").style.display = "block"
+  }
+  else {
+    document.getElementById("next-page").style.display = "none"
+  }
 }
 
 async function search(event) {
