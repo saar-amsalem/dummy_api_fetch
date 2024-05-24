@@ -5,6 +5,9 @@
 2. [Application Overview](#application-overview)
 3. [Assumptions and Important Decisions](#assumptions-and-important-decisions)
 
+## Prerequisites
+python 3.10 and above
+
 ## Installation Instructions
 ### Step-by-Step Installation
 
